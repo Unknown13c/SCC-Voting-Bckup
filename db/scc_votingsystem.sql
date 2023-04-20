@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2023 at 08:00 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Apr 20, 2023 at 04:44 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,25 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `scc_votingsystem`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `school_profile`
---
-
-CREATE TABLE `school_profile` (
-  `ID` int(11) NOT NULL,
-  `Title` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `Description` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `school_profile`
---
-
-INSERT INTO `school_profile` (`ID`, `Title`, `Description`) VALUES
-(1, 'Profile', 'In 2004, the school was renamed into a college and opened its elementary and high school departments. Three years later, the college department opened with course offerings in Teacher Education, Business Administration, Information Technology, and Information Systems. St. Cecilia\'s College is currently a Lasallian School Supervision Office (LASSO) Consultancy School.\r\n\r\nAt present, the St. Cecilia\'s College offers complete programs from the preschool to the college level, including Special Education (SPED). It has a Senior High School (SHS) department with available strands from the Academic and the Technical-Vocational-Livelihood (TVL) tracks. Its college department, on the other hand, provides undergraduate programs in Hospitality and Tourism Management, Business Administration, Teacher Education, Criminology, and Information Technology. Also available is an associate program in Computer Technology.');
 
 -- --------------------------------------------------------
 
@@ -475,7 +456,46 @@ INSERT INTO `tbl_activitylogs` (`logs_id`, `username`, `action`, `login_time`) V
 (2326, 'admin', 'logout', '2023-03-09 16:42:27'),
 (2327, 'admin', 'login', '2023-03-09 16:55:45'),
 (2328, 'admin', 'logout', '2023-03-09 17:02:52'),
-(2329, 'admin', 'login', '2023-03-09 22:17:17');
+(2329, 'admin', 'login', '2023-03-09 22:17:17'),
+(2330, 'admin', 'login', '2023-04-15 19:05:55'),
+(2331, 'admin', 'login', '2023-04-17 08:49:29'),
+(2332, 'admin', 'login', '2023-04-17 08:57:24'),
+(2333, 'admin', 'logout', '2023-04-17 08:59:07'),
+(2334, 'admin', 'login', '2023-04-17 09:06:24'),
+(2335, 'admin', 'logout', '2023-04-17 09:31:22'),
+(2336, 'admin', 'login', '2023-04-17 09:36:48'),
+(2337, 'admin', 'login', '2023-04-17 11:33:37'),
+(2338, 'admin', 'Approved', '2023-04-17 12:50:20'),
+(2339, 'admin', 'Approved', '2023-04-17 12:54:54'),
+(2340, 'admin', 'Approved', '2023-04-17 12:55:51'),
+(2341, 'admin', 'Approved', '2023-04-17 13:08:02'),
+(2342, 'admin', 'Approved', '2023-04-17 13:18:53'),
+(2343, 'admin', 'Rejected candidate', '2023-04-17 13:18:57'),
+(2344, 'admin', 'Approved', '2023-04-17 13:19:53'),
+(2345, 'admin', 'Approved', '2023-04-17 13:21:16'),
+(2346, 'admin', 'Approved', '2023-04-17 13:24:05'),
+(2347, 'admin', 'Approved', '2023-04-17 13:24:07'),
+(2348, 'admin', 'Approved', '2023-04-17 13:26:44'),
+(2349, 'admin', 'Approved', '2023-04-17 13:28:37'),
+(2350, 'admin', 'Approved', '2023-04-17 13:28:38'),
+(2351, 'admin', 'Approved', '2023-04-17 13:29:50'),
+(2352, 'admin', 'Approved', '2023-04-17 13:32:07'),
+(2353, 'admin', 'Approved', '2023-04-17 13:32:09'),
+(2354, 'admin', 'Approved', '2023-04-17 13:54:56'),
+(2355, 'admin', 'Approved', '2023-04-17 13:54:59'),
+(2356, 'admin', 'Approved', '2023-04-17 13:55:01'),
+(2357, 'admin', 'Approved', '2023-04-16 23:09:47'),
+(2358, 'admin', 'Approved', '2023-04-16 23:09:49'),
+(2359, 'admin', 'Approved', '2023-04-16 23:09:51'),
+(2360, 'admin', 'Approved', '2023-04-16 23:09:53'),
+(2361, 'admin', 'Approved', '2023-04-16 23:13:00'),
+(2362, 'admin', 'Approved', '2023-04-16 23:13:02'),
+(2363, 'admin', 'Approved', '2023-04-16 23:13:04'),
+(2364, 'admin', 'Approved', '2023-04-16 23:13:06'),
+(2365, 'admin', 'login', '2023-04-17 00:44:53'),
+(2366, 'admin', 'login', '2023-04-17 01:32:19'),
+(2367, 'admin', 'login', '2023-04-19 13:31:13'),
+(2368, 'admin', 'login', '2023-04-20 09:08:40');
 
 -- --------------------------------------------------------
 
@@ -567,7 +587,31 @@ INSERT INTO `tbl_candidate` (`candidate_id`, `platform`, `image_grade`, `img`, `
 (121, '1.ONLNE SYMPOSIUM\r\n2.SKILL CAPACITY\r\n3.CLEANLINESS\r\n4.ANNOUNCEMENT', '', 'uploads/barro.png', 'Mass Media Officer', 1020, 'Princess', 'Barro', 'barroprincess287@gmail.com', 'BSIT', '1st Year', 'Female', 'approved'),
 (122, 'Platform 1 - Online Symposium\r\nPlatform 2 - Skill Capacity\r\nPlatform 3 - Cleanliness\r\nPlatform 4 - Announcement', '', '../admin/uploads/Baby boy.png', 'Peace Officer', 1020, 'Baby Boy', 'Padriga', 'Beboypadriga11@gmail.com', 'BSIT', '1st Year', 'Male', 'approved'),
 (123, 'Dasig platform', '', '../admin/uploads/307961320_1092244105017847_970197272306763559_n.jpg', 'Peace Officer', 1018, 'Brylle Justin', 'Herminio', 'mikaelee.john@gmail.com', 'BSIT', '1st Year', 'Male', 'approved'),
-(124, 'sample', '', '../admin/uploads/loloko.png', 'President', 1021, 'Reymart', 'Racoma', 'Mr.MENISKI@gmail.com', 'BSBA', '4th Year', 'Male', 'approved');
+(127, 'wefwfwefwef', '', '../admin/uploads/Sample1.jfif', 'Senator', 1019, 'girly', 'girlsm', 'girl@gmail.com', 'BSIT', '3rd Year', 'Female', 'approved'),
+(128, 'qeqweqweqeqweqw', '', '../admin/uploads/Sample1.jfif', 'Senator', 1020, 'momo', 'meme', 'momo@gmail.com', 'BSIT', '1st Year', 'Female', 'approved'),
+(129, 'qwqweqweqwe', '', '../admin/uploads/Sample.jfif', 'Senator', 1019, 'mimi', 'nini', 'nini@gmail.com', 'BSIT', '1st Year', 'Female', 'delete'),
+(130, 'NOthing Special', '', '../admin/uploads/sample2.jpg', 'Senator', 1018, 'Ann', 'Mercedes', 'Ann@gmail.com', 'BSIT', '1st Year', 'Female', 'approved'),
+(131, 'Honest', '', '../admin/uploads/sample3.jfif', 'Senator', 1018, 'Arthur', 'Gregorio', 'Arthur@gmail.com', 'BSIT', '1st Year', 'Male', 'approved'),
+(132, 'Truth is Best', '', '../admin/uploads/sample4.jpg', 'Senator', 1019, 'John Michael', 'Colonel', 'John@gmail.com', 'BSIT', '1st Year', 'Male', 'approved'),
+(133, 'Good Be GOOD', '', '../admin/uploads/sample5.jpg', 'Senator', 1019, 'Anthony', 'Walker', 'Alan@gmail.com', 'BSIT', '2nd Year', 'Male', 'approved'),
+(134, 'God Is GOOD', '', '../admin/uploads/sample6.jpg', 'Senator', 1020, 'Kristine', 'Martinez', 'Kristine@gmail.com', 'BSIT', '2nd Year', 'Female', 'approved'),
+(135, 'Dont Give up', '', '../admin/uploads/sample7.jpeg', 'Senator', 1019, 'Jeissel', 'Clorens', 'Jeissel@gmail.com', 'BSIT', '2nd Year', 'Female', 'approved'),
+(136, 'trust the Proccess', '', '../admin/uploads/sample8.jpg', 'Senator', 1020, 'Joey', 'Zakerberg', 'Joey@gmail.com', 'BSIT', '1st Year', 'Female', 'approved'),
+(137, 'its Gonna Be GOOOD', '', '../admin/uploads/sample9.jpg', 'Senator', 1019, 'Antonitte', 'Ford', 'Antonitte@gmail.com', 'BSIT', '2nd Year', 'Female', 'approved'),
+(138, 'Have Faith in GOD', '', '../admin/uploads/sample10.jfif', 'Senator', 1020, 'Vergiel', 'Fernandez', 'Vergiel@gmail.com', 'BSIT', '2nd Year', 'Female', 'approved'),
+(139, 'Always Faith in Jesus', '', '../admin/uploads/sample11.jfif', 'Senator', 1019, 'Maria Clara', 'bargenio', 'Mariaclara@gmail.com', 'BSIT', '1st Year', 'Female', 'approved'),
+(140, 'Concern In You', '', '../admin/uploads/sample12.jpg', 'Senator', 1019, 'Heziel', 'Zackerberg', 'Heziel@gmail.com', 'BSIT', '1st Year', 'Female', 'approved'),
+(141, 'God is Good All the Time', '', '../admin/uploads/sample13.jpg', 'Senator', 1018, 'Crisha', 'Borlington', 'Crisha@gmail.com', 'BSIT', '2nd Year', 'Female', 'approved'),
+(142, 'Never say never', '', '../admin/uploads/sample14.jpg', 'Senator', 1019, 'Antonio', 'Borlington', 'Antonio@gmail.com', 'BSIT', '4th Year', 'Male', 'approved'),
+(143, 'Nothing is impossible', '', '../admin/uploads/sample15.jpg', 'Senator', 1020, 'Luis', 'Xford', 'Luis@gmail.com', 'BSIT', '2nd Year', 'Male', 'approved'),
+(144, 'DASIG SUGBO', '', '../admin/uploads/sample16.jpg', 'Senator', 1018, 'Bernard', 'Fernandez', 'Bernard@gmail.com', 'BSIT', '3rd Year', 'Male', 'approved'),
+(145, 'God is GOOD', '', '../admin/uploads/sample17.jfif', 'Senator', 1020, 'Faith joy', 'MakClarens', 'Faith@gmail.com', 'BSIT', '2nd Year', 'Female', 'approved'),
+(146, 'God is Good All the Time', '', '../admin/uploads/sample18.jfif', 'Senator', 1018, 'Grace', 'kim', 'Grace@gmail.com', 'BSIT', '4th Year', 'Female', 'approved'),
+(147, 'Have The Glory', '', '../admin/uploads/sample19.jpg', 'Senator', 1019, 'Samantha ', 'Collins', 'Samantha@gmail.com', 'BSIT', '2nd Year', 'Female', 'approved'),
+(148, 'Gorgeous', '', '../admin/uploads/sample20.jpg', 'Senator', 1020, 'Isabella', 'Davis', 'Isabella@gmail.com', 'BSIT', '2nd Year', 'Female', 'approved'),
+(149, 'very Talented', '', '../admin/uploads/sample21.jfif', 'Senator', 1020, 'Gabriella', 'Gonzalez', 'Gabriella@gmail.com', 'BSIT', '2nd Year', 'Female', 'approved'),
+(150, 'Prayer is a Must', '', '../admin/uploads/sample22.jpg', 'Senator', 1019, 'Hailey', 'Carter', 'Hailey@gmail.com', 'BSIT', '4th Year', 'Female', 'approved'),
+(151, 'Secretly Talented', '', '../admin/uploads/sample23.jpg', 'Senator', 1018, 'Alyssa', 'Turner', 'Alyssa@gmail.com', 'BSIT', '3rd Year', 'Female', 'approved');
 
 -- --------------------------------------------------------
 
@@ -613,22 +657,20 @@ INSERT INTO `tbl_partylist` (`partylist_id`, `party`, `year`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vm`
+-- Table structure for table `tbl_sy`
 --
 
-CREATE TABLE `vm` (
-  `ID` int(11) NOT NULL,
-  `School` varchar(255) NOT NULL,
-  `Vision` text NOT NULL,
-  `Mission` text NOT NULL
+CREATE TABLE `tbl_sy` (
+  `sy_id` int(30) NOT NULL,
+  `sy_desc` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `vm`
+-- Dumping data for table `tbl_sy`
 --
 
-INSERT INTO `vm` (`ID`, `School`, `Vision`, `Mission`) VALUES
-(1, 'SCC', 'SCC is a non-stock, non-profit educational institution that envisions itself to be a Center of excellence in Academics, Technology, and the Arts. It aspires to produce professionals and leaders who are globally competitive, imbued with Christian values, integrity, patriotism and stewardship, through quality human education.', 'SCC, following the ideals of St. Cecilia, commits itself to:\r\n\r\n1.   Cutivate and inculcate Christian values to its pupils/students to become men and women of faith and integrity;\r\n2.   Provide the students with knowledge and skills in academic, technology and the arts through the use of modern teaching methods and techniques;\r\n3.   Foster the development of love for country and service to fellowmen;\r\n4.   Upgrade the teachers\' skills and competencies in classroom instruction and management through Faculty Development Program;\r\n5.   Develop the critical thinking skills of students;\r\n6.   Provide opportunities to students;\r\n7.   Inculcate in the students the love, care and preservation of Mother nature.');
+INSERT INTO `tbl_sy` (`sy_id`, `sy_desc`) VALUES
+(1, '2022-2023');
 
 -- --------------------------------------------------------
 
@@ -5039,12 +5081,6 @@ INSERT INTO `votes` (`vote_id`, `candidate_id`, `voters_id`) VALUES
 --
 
 --
--- Indexes for table `school_profile`
---
-ALTER TABLE `school_profile`
-  ADD PRIMARY KEY (`ID`);
-
---
 -- Indexes for table `tbl_activitylogs`
 --
 ALTER TABLE `tbl_activitylogs`
@@ -5076,10 +5112,10 @@ ALTER TABLE `tbl_partylist`
   ADD PRIMARY KEY (`partylist_id`);
 
 --
--- Indexes for table `vm`
+-- Indexes for table `tbl_sy`
 --
-ALTER TABLE `vm`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `tbl_sy`
+  ADD PRIMARY KEY (`sy_id`);
 
 --
 -- Indexes for table `voters`
@@ -5100,16 +5136,10 @@ ALTER TABLE `votes`
 --
 
 --
--- AUTO_INCREMENT for table `school_profile`
---
-ALTER TABLE `school_profile`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT for table `tbl_activitylogs`
 --
 ALTER TABLE `tbl_activitylogs`
-  MODIFY `logs_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2330;
+  MODIFY `logs_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2369;
 
 --
 -- AUTO_INCREMENT for table `tbl_admin`
@@ -5121,7 +5151,7 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_candidate`
 --
 ALTER TABLE `tbl_candidate`
-  MODIFY `candidate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `candidate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
 
 --
 -- AUTO_INCREMENT for table `tbl_messages`
@@ -5136,10 +5166,10 @@ ALTER TABLE `tbl_partylist`
   MODIFY `partylist_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1022;
 
 --
--- AUTO_INCREMENT for table `vm`
+-- AUTO_INCREMENT for table `tbl_sy`
 --
-ALTER TABLE `vm`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `tbl_sy`
+  MODIFY `sy_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `voters`
