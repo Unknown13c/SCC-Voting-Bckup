@@ -119,9 +119,9 @@
                         
                         
                     
-                    <div class="panel panel-success">
+                   <div class="panel panel" style="background-color:#54515EFF;">
                         <div class="panel-heading">
-                        	<center><h3>PRESIDENT</h3></center>
+                        	<center><h3 style="color:White; font-weight:bold; letter-spacing:2px;">PRESIDENT</h3></center>
                         </div>
 
 
@@ -193,9 +193,9 @@
 <!-- Vice President area	 -->
 
 	<div class="col-lg-6">                    
-                    <div class="panel panel-success">
+                     <div class="panel panel" style="background-color:#54515EFF;">
                         <div class="panel-heading">
-                        	<center><h3>VICE PRESIDENT</h3></center>
+                        	<center><h3 style="color:white; font-weight:bold; letter-spacing:2px;">VICE PRESIDENT</h3></center>
                         </div>
 
                         <div class="panel-body" style="background-color: #A3A1A6FF;">
@@ -263,9 +263,9 @@
 	
 	<!-- Secretary area -->
 		<div class="col-lg-6">                    
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                      	<center><h3>SECRETARY</h3></center>
+            <div class="panel panel" style="background-color:#54515EFF;">
+                        <div class="panel-heading">
+                        	<center><h3 style="color:White; font-weight:bold; letter-spacing:2px;">SECRETARY</h3></center>
                         </div>
 
                         <div class="panel-body" style="background-color: #A3A1A6FF;">
@@ -333,9 +333,9 @@
 <!-- Treasurer area -->
 
 		<div class="col-lg-6">
-            <div class="panel panel-success">
-                    <div class="panel-heading">
-                        	<center><h3>TREASURER</h3></center>
+            <div class="panel panel" style="background-color:#54515EFF;">
+                        <div class="panel-heading">
+                        	<center><h3 style="color:White; font-weight:bold; letter-spacing:2px;">TREASURER</h3></center>
                         </div>
 
                         <div class="panel-body" style="background-color: #A3A1A6FF;">
@@ -401,9 +401,9 @@
 
 	<!-- Auditor area -->
 		<div class="col-lg-6">
-             <div class="panel panel-success">
-                   	<div class="panel-heading">
-                        <center><h3>AUDITOR</h3></center>
+             <div class="panel panel" style="background-color:#54515EFF;">
+                        <div class="panel-heading">
+                        	<center><h3 style="color:White; font-weight:bold; letter-spacing:2px;">AUDITOR</h3></center>
                         </div>
 
                         <div class="panel-body" style="background-color: #A3A1A6FF;">
@@ -468,9 +468,9 @@
                 </div>
     <!--  Mass Media Officer area -->
 	 	<div class="col-lg-6">
-	 		<div class="panel panel-success">
-                <div class="panel-heading">
-                     <center><h3>MASS MEDIA OFFICER</h3></center>
+	 		<div class="panel panel" style="background-color:#54515EFF;">
+                        <div class="panel-heading">
+                        	<center><h3 style="color:White; font-weight:bold; letter-spacing:2px;">MASS MEDIA OFFICER</h3></center>
                  </div>
                         <div class="panel-body" style="background-color: #A3A1A6FF;">
 						<?php
@@ -534,16 +534,16 @@
                 </div>
 
 
-  <!--    Peace Officer area -->
+   <!--   Activity Coordinator area -SENATOR -->
 	<div class="col-lg-6">
-	 		<div class="panel panel-success">
-                <div class="panel-heading">
-                     <center><h3>SENATOR</h3></center>
+	 		<div class="panel panel" style="background-color:#54515EFF;">
+                        <div class="panel-heading">
+                        	<center><h3 style="color:White; font-weight:bold; letter-spacing:2px;">SENATOR</h3></center>
                  </div>
                         <div class="panel-body" style="background-color: #A3A1A6FF;">
 						<?php
 						 $bool = false;
-							$query = $conn->query("SELECT tbl_candidate.candidate_id, tbl_candidate.platform, tbl_candidate.img, tbl_candidate.position,tbl_partylist.partylist_id, tbl_partylist.party, tbl_candidate.firstname, tbl_candidate.lastname, tbl_candidate.email, tbl_candidate.department, tbl_candidate.year_level, tbl_candidate.gender FROM tbl_candidate INNER JOIN tbl_partylist ON tbl_candidate.partylist_id = tbl_partylist.partylist_id WHERE `position` = 'senator' and status = 'approved'") or die(mysqli_errno());
+							$query = $conn->query("SELECT tbl_candidate.candidate_id, tbl_candidate.platform, tbl_candidate.img, tbl_candidate.position,tbl_partylist.partylist_id, tbl_partylist.party, tbl_candidate.firstname, tbl_candidate.lastname, tbl_candidate.email, tbl_candidate.department, tbl_candidate.year_level, tbl_candidate.gender FROM tbl_candidate INNER JOIN tbl_partylist ON tbl_candidate.partylist_id = tbl_partylist.partylist_id WHERE `position` = 'Senator' and status = 'approved'") or die(mysqli_errno());
 							while($fetch = $query->fetch_array()){
 								$candidate_id = $fetch['candidate_id'];
 							?>
@@ -562,7 +562,7 @@
 										Platform
 							</b></button>									
 									<button type="button" class="primary ghost">Vote &nbsp;
-										<input  type = "checkbox" value = "<?php echo $fetch['candidate_id'] ?>" id="nator" name ="nator" class = "snator">
+										<input  type = "checkbox" value = "<?php echo $fetch['candidate_id'] ?>" id="Sen_id" name ="Sen_id[]" class = "Sen">
 									</button>
 								</div>
 						</div>
@@ -580,7 +580,7 @@
 							<div class="descrip">
 								<?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Department: </strong> ".$fetch['department']."<br/><strong>Party: </strong> ".$fetch['party']?>
 							<div class="givevote">
-								<input  type = "checkbox" value = "<?php echo $fetch['candidate_id'] ?>" id="p_id" name ="p_id" class = "pofficer"> &nbsp;<span class="vote">Vote <br>
+								<input  type = "checkbox" value = "<?php echo $fetch['candidate_id'] ?>" id="a_id" name ="a_id" class = "actcoordinator"> &nbsp;<span class="vote">Vote <br>
 									<button class="platfromBtn" type="button"  data-toggle="modal" data-target="#candidate_platform<?php echo$fetch['candidate_id']; ?>" id="<?php echo$fetch['candidate_id'];?>"><i class="fa fa-eye"></i>Platform</button>
 
 									<?php
@@ -600,6 +600,7 @@
 						</div>                       
                     </div>
                 </div>
+
 		<center>
 			<button class="submit_vote" type = "submit" id="submitvote" name="submit">Submit Ballot</button>
 			</center>
@@ -697,17 +698,80 @@
 			});
 
 			// SCO Peace Officer
-			$(".snator").on("change", function(){
-				if($(".snator:checked").length == 12)
-					{
-						$(".snator").attr("disabled", "disabled");
-						$(".snator:checked").removeAttr("disabled");
-					}
-				else
-					{
-						$(".snator").removeAttr("disabled");
-					}
+			// $(".pofficer").on("change", function(){
+			// 	if($(".pofficer:checked").length == 3)
+			// 		{
+			// 			$(".pofficer").attr("disabled", "disabled");
+			// 			$(".pofficer:checked").removeAttr("disabled");
+			// 		}
+			// 	else
+			// 		{
+			// 			$(".pofficer").removeAttr("disabled");
+			// 		}
+			// });
+
+			// SCO Activity Coordinator-SENATOR
+			$(".Sen").on("change", function(){
+				if($(".Sen:checked").length == 12)
+				{
+					$(".Sen").attr("disabled", "disabled");
+					$(".Sen:checked").removeAttr("disabled");
+				}
+			else
+				{
+					$(".Sen").removeAttr("disabled");
+				}
 			});
+
+			// 1st year
+			$(".1st").on("change", function(){
+				if($(".1st:checked").length == 1)
+				{
+					$(".1st").attr("disabled", "disabled");
+					$(".1st:checked").removeAttr("disabled");
+				}
+			else
+				{
+					$(".1st").removeAttr("disabled");
+				}
+			});
+
+			// 	2nd year
+			// 	$(".2nd").on("change", function(){
+			// 	if($(".2nd:checked").length == 1)
+			// 	{
+			// 		$(".2nd").attr("disabled", "disabled");
+			// 		$(".2nd:checked").removeAttr("disabled");
+			// 	}
+			// else
+			// 	{
+			// 		$(".2nd").removeAttr("disabled");
+			// 	}
+			// });
+			// 			3rd year
+			// 			$(".3rd").on("change", function(){
+			// 	if($(".3rd:checked").length == 1)
+			// 	{
+			// 		$(".3rd").attr("disabled", "disabled");
+			// 		$(".3rd:checked").removeAttr("disabled");
+			// 	}
+			// else
+			// 	{
+			// 		$(".3rd").removeAttr("disabled");
+			// 	}
+			// });
+			// 			4th year
+			// 			$(".4th").on("change", function(){
+			// 	if($(".4th:checked").length == 1)
+			// 	{
+			// 		$(".4th").attr("disabled", "disabled");
+			// 		$(".4th:checked").removeAttr("disabled");
+			// 	}
+			// else
+			// 	{
+			// 		$(".4th").removeAttr("disabled");
+			// 	}
+			// });
 
 		});	
 	</script>

@@ -2,7 +2,19 @@
 <?php include ('sess.php');?>
 
 <body>
+<style>
+          .Assign{
+				display: flex;
+				justify-content: center;
+				text-align: center;
+				display:row;
+				float:left;
+				padding-left:50px;		
+			}
 
+
+
+</style>
  <?php include 'side_bar.php'; ?>
 
 				        <?php
@@ -39,44 +51,14 @@
 										$mmo = $_POST['mmo_id'];
 										$_SESSION['mmo_id'] = $_POST['mmo_id'];
 
-									}if(!isset($_POST['p_id'])){
+									}if(!isset($_POST['Sen_id'])){
 										// $_SESSION['p_id'] = "";
-										$p=$_POST['p_id']="";
+										$Senator=$_POST['Sen_id']="";
 										
 										header("Location: vote.php?error=Choosecandidate");
 									}else{
-										$p = $_POST['p_id'];
-										$_SESSION['p_id'] = $_POST['p_id'];
-									}if(!isset($_POST['a_id'])){
-										$activity=$_POST['a_id'] = "";
-										header("Location: vote.php?error=Choosecandidate");
-									}else{
-										$activity = $_POST['a_id'];
-										$_SESSION['a_id'] = $_POST['a_id'];
-									}if(!isset($_POST['st'])){
-										$_SESSION['st'] = "";
-										header("Location: vote.php?error=Choosecandidate");
-									}else{
-										$_SESSION['st'] = $_POST['st'];
-										$_SESSION['st'] = $_POST['st'];
-									}if(!isset($_POST['nd'])){
-										$_SESSION['nd'] = "";
-										header("Location: vote.php?error=Choosecandidate");
-									}else{
-										$_SESSION['nd'] = $_POST['nd'];
-										$_SESSION['nd'] = $_POST['nd'];
-									}if(!isset($_POST['rd'])){
-										$_SESSION['rd'] = "";
-										header("Location: vote.php?error=Choosecandidate");
-									}else{
-										$_SESSION['rd'] = $_POST['rd'];
-										$_SESSION['rd'] = $_POST['rd'];
-									}if(!isset($_POST['th'])){
-										$_SESSION['th'] = "";
-										header("Location: vote.php?error=Choosecandidate");
-									}else{
-										$_SESSION['th'] = $_POST['th'];
-										$_SESSION['th'] = $_POST['th'];
+										$Senator = $_POST['Sen_id'];
+										$_SESSION['Sen_id'] = $_POST['Sen_id'];
 									}
 								}
 
@@ -84,89 +66,97 @@
 						?>
 		<form method="post" action="submit_vote.php">			   
 			<center>
-			
+			<br>
 			  <div class="col-lg-6"  >
-			  <div class = "alert alert-info">
+			  <div class = "alert alert"style="background-color:gray;">
 			  <!-- 	President area -->
-			  <div class="panel panel-success">
-				<div class="panel-heading"><center><h3>President</h3></center></div>
-			  </div>
+			  <div class="panel panel" style="background-color:white; font-family:tahoma;">
+			   <div class="panel-heading"><center><h3 style="color:#ec0303; font-weight:bold; letter-spacing:3px;">President</h3></center></div>
+			 </div>
 				<br />
 				<?php
 					if(!$_SESSION['pres_id']){
 					}else{
 					$fetch = $conn->query("SELECT * FROM `tbl_candidate` WHERE `candidate_id` = '$_SESSION[pres_id]'")->fetch_array();
-					echo "<img src = 'admin/".$fetch['img']."' style = 'width:15%; ' /><br>".$fetch['firstname']."&nbsp".$fetch['lastname']."&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
+					echo "<img src = 'admin/".$fetch['img']."' style = 'width:18%; color:black;' /><br><br>".$fetch['firstname']."&nbsp&nbsp".$fetch['lastname']."&nbsp&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
 						}
-				?>
-				</div>
+				?></div>
+				
+				
+	
 				
 				<!-- Vice President Area -->
-				<div class = "alert alert-info" >
-				<div class="panel panel-success">
-				<div class="panel-heading"><center><h3>Vice President</h3></center></div>
+				
+				 <div class = "alert alert"style="background-color: gray;">
+				<div class="panel panel" style="background-color:white; font-family:tahoma;">
+			   <div class="panel-heading"><center><h3 style="color:#ec0303; font-weight:bold; letter-spacing:3px;">Vice President</h3></center></div>
 				</div>
 				<?php
 					if(!$_SESSION['vp_id']){
 					}else{
 					$fetch = $conn->query("SELECT * FROM `tbl_candidate` WHERE `candidate_id` = '$_SESSION[vp_id]'")->fetch_array(); 
-					echo "<img src = 'admin/".$fetch['img']."' style = 'width:15%; ' /><br>".$fetch['firstname']."&nbsp".$fetch['lastname']."&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
+					echo "<img src = 'admin/".$fetch['img']."' style = 'width:18%; ' /><br><br>".$fetch['firstname']."&nbsp".$fetch['lastname']."&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
 						}
 				?>
 				</div>
+				
 
 				<!-- Secretary Area -->
-				<div class = "alert alert-info">
-				<div class="panel panel-success">
-				<div class="panel-heading"><center><h3>Secretary</h3></center></div>
+				
+				 <div class = "alert alert"style="background-color: gray;">
+				<div class="panel panel" style="background-color:white; font-family:tahoma;">
+			   <div class="panel-heading"><center><h3 style="color:#ec0303; font-weight:bold; letter-spacing:3px;">Secretary</h3></center></div>
 				</div>
 				<br/>
 				<?php
 					if(!$_SESSION['sec_id']){
 					}else{
 					$fetch = $conn->query("SELECT * FROM `tbl_candidate` WHERE `candidate_id` = '$_SESSION[sec_id]'")->fetch_array(); 
-					echo "<img src = 'admin/".$fetch['img']."' style = 'width:15%; ' /><br>".$fetch['firstname']."&nbsp".$fetch['lastname']."&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
+					echo "<img src = 'admin/".$fetch['img']."' style = 'width:15%; ' /><br><br>".$fetch['firstname']."&nbsp".$fetch['lastname']."&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
 						}
 				?>
 					
 				</div>
 
 				<!-- Treasurer Area -->
-				<div class = "alert alert-info" >
-				<div class="panel panel-success">
-				<div class="panel-heading"><center><h3>Treasurer</h3></center></div>
+				
+				 <div class = "alert alert"style="background-color: gray;">
+				<div class="panel panel" style="background-color:white; font-family:tahoma;">
+			    <div class="panel-heading"><center><h3 style="color:#ec0303; font-weight:bold; letter-spacing:3px;">Treasurer</h3></center></div>
 				</div>
 				<br />
 				<?php
 					if(!$_SESSION['tre_id']){
 					}else{
 					$fetch = $conn->query("SELECT * FROM `tbl_candidate` WHERE `candidate_id` = '$_SESSION[tre_id]'")->fetch_array(); 
-					echo "<img src = 'admin/".$fetch['img']."' style = 'width:15%;' /><br>".$fetch['firstname']."&nbsp".$fetch['lastname']."&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
+					echo "<img src = 'admin/".$fetch['img']."' style = 'width:15%;' /><br><br>".$fetch['firstname']."&nbsp".$fetch['lastname']."&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
 						}
 				?>
 				
 				</div>
 
 				<!-- Auditor Area -->
-				<div class = "alert alert-info">
-				<div class="panel panel-success">
-				<div class="panel-heading"><center><h3>Auditor</h3></center></div>
+				
+				 <div class = "alert alert"style="background-color: gray;">
+				<div class="panel panel" style="background-color:white; font-family:tahoma;">
+			   <div class="panel-heading"><center><h3 style="color:#ec0303; font-weight:bold; letter-spacing:3px;">Auditor</h3></center></div>
 				</div>
 				<br />
 				<?php
 					if(!$_SESSION['aud_id']){
 					}else{
 					$fetch = $conn->query("SELECT * FROM `tbl_candidate` WHERE `candidate_id` = '$_SESSION[aud_id]'")->fetch_array();
-					echo "<img src = 'admin/".$fetch['img']."' style = 'width:15%;' /><br>".$fetch['firstname']."&nbsp".$fetch['lastname']."&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
+					echo "<img src = 'admin/".$fetch['img']."' style = 'width:15%;' /><br><br>".$fetch['firstname']."&nbsp".$fetch['lastname']."&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
 						}
 				?>
 				
 				</div>
 
 				<!-- Mass media Officer Area -->
-				<div class = "alert alert-info">
-				<div class="panel panel-success">
-				<div class="panel-heading"><center><h3>Mass Media Officer</h3></center></div>
+				
+				 <div class = "alert alert"style="background-color: gray;">
+				<div class="panel panel" style="background-color:white; font-family:tahoma;">
+			   <div class="panel-heading"><center><h3 style="color:#ec0303; font-weight:bold; letter-spacing:3px;">Mass Media Officer</h3></center></div>
 			    </div>
 				<br />
 				<?php
@@ -175,33 +165,32 @@
 					if(!$mmo){
 					}else{
 					$fetch = $conn->query("SELECT * FROM `tbl_candidate` WHERE `candidate_id` = '$_SESSION[mmo]'")->fetch_array();
-					echo "<img src = 'admin/".$fetch['img']."' style = 'width:15%;' /><br>".$fetch['firstname']."&nbsp".$fetch['lastname']."&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
+					echo "<img src = 'admin/".$fetch['img']."' style = 'width:18%;display: flex;' /><br>".$fetch['firstname']."&nbsp".$fetch['lastname']."&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
 						}
 					}
 				?>
 				
 				</div>
 
-				<!-- Peace Officer Area -->
+				<!--SENATOR -->
 				
-				
-
-				<div class = "alert alert-info" >
-				<div class="panel panel-success">
-				<div class="panel-heading"><center><h3>SENATOR</h3></center></div>
+				 <div class = "alert alert"style="background-color: gray;">
+				<div class="panel panel" style="background-color:white; font-family:tahoma;">
+			   <div class="panel-heading"><center><h3 style="color:#ec0303; font-weight:bold; letter-spacing:3px;">Senator</h3></center></div>
 			    </div>
 				<br />
 				<?php
-				foreach($nator as $row =>$_SESSION['nator']){
+				foreach($Senator as $row =>$_SESSION['Senat']){
 
-					if(!$nator){
+					if(!$Senator){
 					}else{
-					$fetch = $conn->query("SELECT * FROM `tbl_candidate` WHERE `candidate_id` = '$_SESSION[nator]'")->fetch_array();
-					echo "<img src = 'admin/".$fetch['img']."' style = 'width:15%;' /><br>".$fetch['firstname']."&nbsp".$fetch['lastname']."&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
+					$fetch = $conn->query("SELECT * FROM `tbl_candidate` WHERE `candidate_id` = '$_SESSION[Senat]'")->fetch_array();
+					echo "<img src = 'admin/".$fetch['img']."' style = 'width:18%;' />".$fetch['firstname']."&nbsp".$fetch['lastname']."&nbsp".$fetch['year_level']."&nbsp".$fetch['department']."";
 						}
 				}
 				?>
 				</div>
+				
 		</center>
 	</form>
 				<?php

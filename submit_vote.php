@@ -16,10 +16,16 @@
 
 						$conn->query("INSERT INTO `votes` VALUES('', '$mmo', '$_SESSION[voters_id]')") or die($conn->error);
 						}
-						$conn->query("INSERT INTO `votes` VALUES('', '$_SESSION[nator]',   '$_SESSION[voters_id]')") or die($conn->error);
-						$conn->query("INSERT INTO `votes` VALUES('', '$_SESSION[nd]',   '$_SESSION[voters_id]')") or die($conn->error);
-						$conn->query("INSERT INTO `votes` VALUES('', '$_SESSION[rd]',   '$_SESSION[voters_id]')") or die($conn->error);
-						$conn->query("INSERT INTO `votes` VALUES('', '$_SESSION[th]',   '$_SESSION[voters_id]')") or die($conn->error);
+						foreach($_SESSION['Sen_id'] as $row =>$Senat){
+						
+			
+						$conn->query("INSERT INTO `votes` VALUES('', '$Senat',   '$_SESSION[voters_id]')") or die($conn->error);
+						}
+
+						foreach($_SESSION['a_id'] as $row =>$activity){
+						$conn->query("INSERT INTO `votes` VALUES('', '$activity',   '$_SESSION[voters_id]')") or die($conn->error);
+						}
+						$conn->query("INSERT INTO `votes` VALUES('', '$_SESSION[st]',   '$_SESSION[voters_id]')") or die($conn->error);
 
 						$conn->query("UPDATE `voters` SET `status` = 'Voted' WHERE `voters_id` = '$_SESSION[voters_id]'") or die($conn->error);
 
@@ -54,11 +60,10 @@
 				            $mlastname = $mmo['lastname'];
 				            $mdepartment = $mmo['department'];
 
-							$acor = $conn->query("SELECT * FROM tbl_candidate WHERE candidate_id = '$_SESSION[nator]'")->fetch_array();
-				            $acfirstname = $acor['firstname'];
-				            $aclastname = $acor['lastname'];
-				            $acdepartment = $acor['department']; 
-
+				            $senats = $conn->query("SELECT * FROM tbl_candidate WHERE candidate_id = '$_SESSION[Sen_id]'")->fetch_array();
+				            $snfirstname = $senats['firstname'];
+				            $snlastname = $senats['lastname'];
+				            $sndepartment = $senats['department'];
 							
 			// start comment	            
 				            // $query = $conn->query("SELECT * FROM voters WHERE voters_id = '$_SESSION[voters_id]'");
