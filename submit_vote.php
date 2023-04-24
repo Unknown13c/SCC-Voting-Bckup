@@ -22,11 +22,6 @@
 						$conn->query("INSERT INTO `votes` VALUES('', '$Senat',   '$_SESSION[voters_id]')") or die($conn->error);
 						}
 
-						foreach($_SESSION['a_id'] as $row =>$activity){
-						$conn->query("INSERT INTO `votes` VALUES('', '$activity',   '$_SESSION[voters_id]')") or die($conn->error);
-						}
-						$conn->query("INSERT INTO `votes` VALUES('', '$_SESSION[st]',   '$_SESSION[voters_id]')") or die($conn->error);
-
 						$conn->query("UPDATE `voters` SET `status` = 'Voted' WHERE `voters_id` = '$_SESSION[voters_id]'") or die($conn->error);
 
 
@@ -60,10 +55,10 @@
 				            $mlastname = $mmo['lastname'];
 				            $mdepartment = $mmo['department'];
 
-				            $senats = $conn->query("SELECT * FROM tbl_candidate WHERE candidate_id = '$_SESSION[Sen_id]'")->fetch_array();
-				            $snfirstname = $senats['firstname'];
-				            $snlastname = $senats['lastname'];
-				            $sndepartment = $senats['department'];
+				            $acenats = $conn->query("SELECT * FROM tbl_candidate WHERE candidate_id = '$_SESSION[Sen_id]'")->fetch_array();
+				            $acnfirstname = $senats['firstname'];
+				            $acnlastname = $senats['lastname'];
+				            $acndepartment = $senats['department'];
 							
 			// start comment	            
 				            // $query = $conn->query("SELECT * FROM voters WHERE voters_id = '$_SESSION[voters_id]'");

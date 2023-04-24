@@ -632,29 +632,29 @@ form .btn-block {
 /*Submit vote button */
 .submit_vote,
 .btn_back {
-  width: 15%;
-  background-color: #eeeeee;
-  border-radius: 3px;
+  width: 13%;
+  background-color: #d10606;
+  border-radius: 8px;
   border: none;
   height: 40px;
   font-size: 20px;
   text-decoration: none;
 }
 .btn_back {
-  background-color: rgb(255, 255, 255) !important;
+  background-color: rgb(226, 0, 0) !important;
 }
 .btn_back a {
-  color: #000000 !important;
+  color: #fff !important;
 }
 .submit_vote a {
-  color: #cfcfcf;
+  color: #fff;
 }
 .btn_back a:hover {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
 }
 .submit_vote a:hover {
-  color: #b1b1b1;
+  color: #000000;
   text-decoration: none;
 }
 

@@ -53,9 +53,22 @@
 					 $C66 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'Mass Media Officer' and status = 'approved' ORDER BY total DESC LIMIT 1,1;")->fetch_array();
 					 $C662 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'Mass Media Officer' and status = 'approved' ORDER BY total DESC LIMIT 2,1;")->fetch_array();   
 					 
-					 $C7 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC")->fetch_array(); 
-					 $C77 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC LIMIT 1,1;")->fetch_array();
-					  ?>
+						$S1 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC")->fetch_array(); 
+						$S2 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC LIMIT 1,1;")->fetch_array();
+						$S3 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC LIMIT 2,1;")->fetch_array();
+						$S4 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC LIMIT 3,1;")->fetch_array();
+						$S5 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC LIMIT 4,1;")->fetch_array();
+						$S6 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC LIMIT 5,1;")->fetch_array();
+						$S7 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC LIMIT 6,1;")->fetch_array();
+						$S8 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC LIMIT 7,1;")->fetch_array();
+						$S9 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC LIMIT 8,1;")->fetch_array();
+						$S10 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC LIMIT 9,1;")->fetch_array();
+						$S11 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC LIMIT 10,1;")->fetch_array();
+						$S12 = $conn->query("SELECT *, (SELECT COUNT(*) FROM votes v WHERE v.candidate_id = c.candidate_id) as total FROM tbl_candidate c WHERE position = 'senator' and status = 'approved' ORDER BY total DESC LIMIT 11,1;")->fetch_array();
+
+					 
+					 
+					 ?>
 							
 						<div class="content-position">
 							<ul>
@@ -75,8 +88,19 @@
 
 								<li><b>Senator:</b>
 									<ul>
-										<li>1. <?php echo $C7['firstname']."  ".$C7['lastname']." - ".$C7['department']." - ".$C7['year_level'];?></li>
-										<li>2. <?php echo $C77['firstname']."  ".$C77['lastname']." - ".$C77['department']." - ".$C77['year_level'];?></li>
+										<li>1. <?php echo $S1['firstname']."  ".$S1['lastname']." - ".$S1['department']." - ".$S1['year_level'];?></li>
+										<li>2. <?php echo $S2['firstname']."  ".$S2['lastname']." - ".$S2['department']." - ".$S2['year_level'];?></li>
+										<li>3. <?php echo $S3['firstname']."  ".$S3['lastname']." - ".$S3['department']." - ".$S3['year_level'];?></li>
+										<li>4. <?php echo $S4['firstname']."  ".$S4['lastname']." - ".$S4['department']." - ".$S4['year_level'];?></li>
+										<li>5. <?php echo $S5['firstname']."  ".$S5['lastname']." - ".$S5['department']." - ".$S5['year_level'];?></li>
+										<li>6. <?php echo $S6['firstname']."  ".$S6['lastname']." - ".$S6['department']." - ".$S6['year_level'];?></li>
+										<li>7. <?php echo $S7['firstname']."  ".$S7['lastname']." - ".$S7['department']." - ".$S7['year_level'];?></li>
+										<li>8. <?php echo $S8['firstname']."  ".$S8['lastname']." - ".$S8['department']." - ".$S8['year_level'];?></li>
+										<li>9. <?php echo $S9['firstname']."  ".$S9['lastname']." - ".$S9['department']." - ".$S9['year_level'];?></li>
+										<li>10. <?php echo $S10['firstname']."  ".$S10['lastname']." - ".$S10['department']." - ".$S10['year_level'];?></li>
+										<li>11. <?php echo $S11['firstname']."  ".$S11['lastname']." - ".$S11['department']." - ".$S11['year_level'];?></li>
+										<li>12. <?php echo $S12['firstname']."  ".$S12['lastname']." - ".$S12['department']." - ".$S12['year_level'];?></li>
+
 									</ul>
 								</li>
 							</ul>

@@ -710,7 +710,7 @@
 			// 		}
 			// });
 
-			// SCO Activity Coordinator-SENATOR
+			// SCO SENATOR
 			$(".Sen").on("change", function(){
 				if($(".Sen:checked").length == 12)
 				{
@@ -724,17 +724,17 @@
 			});
 
 			// 1st year
-			$(".1st").on("change", function(){
-				if($(".1st:checked").length == 1)
-				{
-					$(".1st").attr("disabled", "disabled");
-					$(".1st:checked").removeAttr("disabled");
-				}
-			else
-				{
-					$(".1st").removeAttr("disabled");
-				}
-			});
+			// $(".1st").on("change", function(){
+			// 	if($(".1st:checked").length == 1)
+			// 	{
+			// 		$(".1st").attr("disabled", "disabled");
+			// 		$(".1st:checked").removeAttr("disabled");
+			// 	}
+			// else
+			// 	{
+			// 		$(".1st").removeAttr("disabled");
+			// 	}
+			// });
 
 			// 	2nd year
 			// 	$(".2nd").on("change", function(){

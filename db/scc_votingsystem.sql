@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2023 at 04:44 AM
+-- Generation Time: Apr 24, 2023 at 04:46 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -495,7 +495,12 @@ INSERT INTO `tbl_activitylogs` (`logs_id`, `username`, `action`, `login_time`) V
 (2365, 'admin', 'login', '2023-04-17 00:44:53'),
 (2366, 'admin', 'login', '2023-04-17 01:32:19'),
 (2367, 'admin', 'login', '2023-04-19 13:31:13'),
-(2368, 'admin', 'login', '2023-04-20 09:08:40');
+(2368, 'admin', 'login', '2023-04-20 09:08:40'),
+(2369, 'admin', 'login', '2023-04-20 11:44:16'),
+(2370, 'admin', 'login', '2023-04-20 14:49:53'),
+(2371, 'admin', 'login', '2023-04-24 10:01:35'),
+(2372, 'admin', 'logout', '2023-04-24 10:23:29'),
+(2373, 'admin', 'login', '2023-04-24 10:37:43');
 
 -- --------------------------------------------------------
 
@@ -5139,7 +5144,7 @@ ALTER TABLE `votes`
 -- AUTO_INCREMENT for table `tbl_activitylogs`
 --
 ALTER TABLE `tbl_activitylogs`
-  MODIFY `logs_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2369;
+  MODIFY `logs_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2374;
 
 --
 -- AUTO_INCREMENT for table `tbl_admin`
